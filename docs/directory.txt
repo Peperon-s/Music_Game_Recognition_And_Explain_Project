@@ -1,0 +1,49 @@
+Music_Game_Recognition_And_Explain_Project-1/
+├── docker/
+│   ├── Dockerfile              # PyTorch 2.2 + CUDA 12.1 ベース
+│   └── docker-compose.yml      # train / collect / notebook の3サービス
+│
+├── src/
+│   ├── collection/             # ① データ収集
+│   │   ├── downloader.py       # yt-dlp で YouTube動画取得
+│   │   └── scraper.py          # Wiki からユーザー難易度ラベル取得
+│   │
+│   ├── preprocessing/          # ② 前処理
+│   │   ├── extractor.py        # フレーム抽出（OpenCV）
+│   │   ├── diff.py             # フレーム間差分法
+│   │   ├── binarize.py         # 二値化・ノイズ除去
+│   │   └── dataset.py          # PyTorch Dataset（クリップ＋ラベル）
+│   │
+│   ├── models/                 # ③ モデル
+│   │   ├── cnn.py              # CNN特徴抽出（torchvision バックボーン）
+│   │   ├── lstm.py             # LSTM時系列エンコーダ
+│   │   └── cnn_lstm.py         # 統合モデル＋順序回帰ヘッド
+│   │
+│   ├── train/                  # ④ 学習
+│   │   ├── trainer.py          # 学習ループ・チェックポイント
+│   │   ├── loss.py             # 順序回帰損失関数
+│   │   └── evaluate.py         # RMSE等評価指標
+│   │
+│   ├── xai/                    # ⑤ XAI
+│   │   ├── gradcam.py          # Grad-CAM実装
+│   │   └── visualize.py        # ヒートマップのフレーム重畳・保存
+│   │
+│   └── utils/
+│       ├── config.py           # config.yaml 読み込み
+│       └── logger.py           # ロギング設定
+│
+├── data/
+│   ├── raw/                    # 収集した生動画
+│   ├── processed/              # 前処理済みフレームクリップ
+│   └── labels/                 # ユーザー難易度ラベル
+│
+├── outputs/
+│   ├── models/                 # 学習済みモデル重み
+│   ├── logs/                   # 学習ログ
+│   └── visualizations/         # Grad-CAMヒートマップ出力
+│
+├── notebooks/                  # 探索的実験・結果確認
+├── configs/
+│   └── config.yaml             # ハイパーパラメータ・パス設定（コメントのみ）
+├── requirements.txt
+└── docs/                       # 既存

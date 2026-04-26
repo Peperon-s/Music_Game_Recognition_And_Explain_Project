@@ -1,0 +1,30 @@
+# 使用ツール一覧
+# バージョン管理については検討中。
+# ローカルに入っているバージョンを気にせず、必要なバージョンを入れるように。
+
+## コア
+1. python           # 3.11系を想定
+2. pytorch (cuda)   # 2.2系 + CUDA 12.1
+3. torchvision      # pytorchに対応するバージョン（CNNの事前学習モデル利用）
+4. opencv-python    # 4.9系（フレーム差分・二値化処理）
+5. numpy
+6. pandas
+
+## データ収集
+7. yt-dlp           # YouTube動画ダウンロード
+8. requests         # HTTPリクエスト（Wikiスクレイピング）
+9. beautifulsoup4   # HTMLパース（ユーザー難易度ラベル取得）
+
+## 前処理・画像
+10. Pillow          # 画像I/O補助
+
+## 学習・評価
+11. scikit-learn    # 評価指標（RMSE等）、前処理ユーティリティ
+
+## 可視化（XAI・結果）
+12. matplotlib      # Grad-CAMヒートマップ・グラフ描画
+
+## 実験管理
+13. jupyterlab      # 探索的実験・結果確認用ノートブック
+14. pyyaml          # ハイパーパラメータ・設定ファイル管理（config.yaml読み込み）
+15. tqdm            # 進捗表示

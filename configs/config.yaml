@@ -1,0 +1,38 @@
+# ========== データ収集 ==========
+collection:
+  # download_dir: data/raw/videos
+  # label_dir:    data/labels
+
+# ========== 前処理 ==========
+preprocessing:
+  # frame_rate:        # 抽出フレームレート (fps)
+  # resize:            # フレームリサイズ (H, W)
+  # diff_threshold:    # 二値化閾値
+  # clip_length:       # 1サンプルあたりのフレーム数
+  # output_dir: data/processed
+
+# ========== モデル ==========
+model:
+  # cnn_backbone:      # 特徴抽出CNN (例: resnet18)
+  # lstm_hidden_size:
+  # lstm_num_layers:
+  # num_classes:       # 難易度クラス数（順序回帰）
+  # dropout:
+
+# ========== 学習 ==========
+training:
+  # epochs:
+  # batch_size:
+  # learning_rate:
+  # weight_decay:
+  # device: cuda
+  # checkpoint_dir: outputs/models
+
+# ========== XAI ==========
+xai:
+  # target_layer:      # Grad-CAM対象レイヤー名
+  # output_dir: outputs/visualizations
+
+# ========== ログ ==========
+logging:
+  # log_dir: outputs/logs
