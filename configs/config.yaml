@@ -1,7 +1,31 @@
 # ========== データ収集 ==========
 collection:
-  # download_dir: data/raw/videos
-  # label_dir:    data/labels
+  channel_url: "https://www.youtube.com/@proseka-trainer"
+
+  # 難易度区分ごとの速さ10.0プレイリストURL
+  playlists:
+    EASY:   ""
+    NORMAL: ""
+    HARD:   "https://www.youtube.com/playlist?list=PLWGP8tUHpRUnHXwdU69WpptS5AVW0YvDw"
+    EXPERT: "https://www.youtube.com/playlist?list=PLWGP8tUHpRUkiOBUoqgqvtAU1ngJWAXjY"
+    MASTER: "https://www.youtube.com/playlist?list=PLWGP8tUHpRUmQdOnRv73n_OJ9Z1AyIAOq"
+    APPEND: "https://www.youtube.com/playlist?list=PLWGP8tUHpRUmbkthOEVylzOSRH50Mw9Mb"
+
+  # ダウンロード先（YouTubeの元ファイル名のまま保存）
+  # 例: [プロセカ]初音ミクの消失(MASTER26)譜面確認(速さ 10.0).mp4
+  download_dir: data/raw
+
+  # 整理後（リネーム・難易度区分別サブディレクトリ）
+  # 例: data/organized/MASTER/<001>[MASTER 26]初音ミクの消失 - 01.mp4
+  organized_dir: data/organized
+
+  label_dir: data/labels
+
+  # ファイル命名規則
+  # ダウンロード時のYouTubeタイトル形式（パース用）
+  raw_name_pattern: "[プロセカ]{title}({difficulty}{level})譜面確認(速さ 10.0)"
+  # 整理後のファイル名形式
+  organized_name_pattern: "<{global_index:03d}>[{difficulty} {level}]{title} - {index:02d}"
 
 # ========== 前処理 ==========
 preprocessing:

@@ -1,1 +1,4 @@
 # 有志Wiki等からユーザー難易度ラベルを取得するスクレイパー
+
+
+class WikiScraper:
