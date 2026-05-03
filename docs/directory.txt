@@ -6,6 +6,7 @@ Music_Game_Recognition_And_Explain_Project-1/
 ├── src/
 │   ├── collection/             # ① データ収集
 │   │   ├── downloader.py       # yt-dlp で YouTube動画取得
+│   │   ├── organizer.py        # raw動画をリネーム・難易度区分別に整理
 │   │   └── scraper.py          # Wiki からユーザー難易度ラベル取得
 │   │
 │   ├── preprocessing/          # ② 前処理
